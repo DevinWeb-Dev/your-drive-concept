@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="YOUR DRIVE automotive logo">
+  <defs>
+    <linearGradient id="surface" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#25393E"></stop>
+      <stop offset="1" stop-color="#10191E"></stop>
+    </linearGradient>
+
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#8FC75D"></stop>
+      <stop offset="1" stop-color="#D9FF98"></stop>
+    </linearGradient>
+  </defs>
+
+  <rect width="128" height="128" rx="29" fill="url(#surface)"></rect>
+
+  <rect x="7" y="7" width="114" height="114" rx="23" fill="none" stroke="#C5F46D" stroke-opacity=".28" stroke-width="2"></rect>
+
+  <path d="M30 81A39 39 0 0 1 98 81" fill="none" stroke="#51635E" stroke-width="9" stroke-linecap="round"></path>
+
+  <path d="M30 81A39 39 0 0 1 85 37" fill="none" stroke="url(#accent)" stroke-width="9" stroke-linecap="round"></path>
+
+  <path d="M64 70L88 47" stroke="#C5F46D" stroke-width="7" stroke-linecap="round"></path>
+
+  <circle cx="64" cy="70" r="9" fill="#C5F46D"></circle>
+
+  <circle cx="64" cy="70" r="3" fill="#162126"></circle>
+
+  <path d="M38 94H90" stroke="#DCE9DC" stroke-width="4" stroke-linecap="round" opacity=".8"></path>
+</svg>

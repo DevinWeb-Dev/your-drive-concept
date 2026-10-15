@@ -1,0 +1,1726 @@
+/* =============================================
+   YOUR DRIVE. — BATCH 2
+   ADVANCED VEHICLE EXPERIENCE
+   ============================================= */
+
+.yd2-page {
+  min-width: 0;
+  color: #172128;
+  background: #f2f4f1;
+}
+
+.yd2-page *,
+.yd2-page *::before,
+.yd2-page *::after {
+  box-sizing: border-box;
+}
+
+.yd2-page :is(
+  button,
+  input,
+  select,
+  textarea,
+  a
+):focus-visible {
+  outline: 3px solid #9fd75e;
+  outline-offset: 3px;
+}
+
+.yd2-page-hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: 100px;
+  background:
+    radial-gradient(
+      ellipse at 86% 24%,
+      #34484a,
+      transparent 52%
+    ),
+    #11191e;
+  color: white;
+}
+
+.yd2-page-hero::after {
+  content: "";
+  position: absolute;
+  right: -6%;
+  top: -35%;
+  width: 45%;
+  height: 130%;
+  border: 1px solid #c5f46d1d;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.yd2-page-hero h1 {
+  max-width: 1150px;
+  margin: 27px 0 28px;
+  font: 800 clamp(5rem, 9vw, 10.5rem)/0.8
+    "Barlow Condensed", sans-serif;
+  letter-spacing: -0.045em;
+}
+
+.yd2-page-hero h1 em {
+  color: #c5f46d;
+  font-weight: 500;
+}
+
+.yd2-page-hero p {
+  max-width: 670px;
+  margin: 0;
+  color: #b6c8c1;
+  font-size: 0.9rem;
+  line-height: 1.95;
+}
+
+.yd2-section {
+  padding-block: clamp(75px, 8vw, 135px);
+}
+
+.yd2-section-heading {
+  margin-bottom: 32px;
+}
+
+.yd2-section-heading h2,
+.yd2-history-selector h2,
+.yd2-history-toolbar h2 {
+  margin: 20px 0 0;
+  font: 800 clamp(3.8rem, 5.9vw, 6.5rem)/0.86
+    "Barlow Condensed", sans-serif;
+  letter-spacing: -0.025em;
+}
+
+.yd2-section-heading h2 em,
+.yd2-history-selector h2 em,
+.yd2-history-toolbar h2 em {
+  color: #7d9e7f;
+  font-weight: 500;
+}
+
+.yd2-panel,
+.yd2-calendar-panel {
+  min-width: 0;
+  padding: clamp(22px, 3.5vw, 40px);
+  background: #fff;
+  border: 1px solid #dfe7de;
+}
+
+.yd2-field {
+  display: grid;
+  gap: 11px;
+  min-width: 0;
+}
+
+.yd2-field > span {
+  color: #70876f;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+}
+
+.yd2-field input,
+.yd2-field select,
+.yd2-field textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 51px;
+  padding: 13px 15px;
+  border: 1px solid #d9e4da;
+  background: #f8faf5;
+  color: #172128;
+  font-size: 0.8rem;
+}
+
+.yd2-field textarea {
+  min-height: 125px;
+  resize: vertical;
+}
+
+.yd2-fields-two {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.yd2-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  transition: gap 0.2s ease;
+}
+
+.yd2-text-link:hover {
+  gap: 20px;
+}
+
+.yd2-bottom-navigation {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 22px 35px;
+  margin-top: 48px;
+}
+
+.yd2-information-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 23px;
+  padding: 22px;
+  background: #e7efe1;
+  border-left: 3px solid #8cae64;
+}
+
+.yd2-information-note svg {
+  flex-shrink: 0;
+  color: #679159;
+}
+
+.yd2-information-note p {
+  margin: 0;
+  color: #728478;
+  font-size: 0.77rem;
+  line-height: 1.85;
+}
+
+.yd2-error,
+.yd2-success {
+  padding: 13px 16px;
+  border: 1px solid #e8cabc;
+  background: #fff0e8;
+  color: #a2654b;
+  font-size: 0.75rem;
+  line-height: 1.8;
+}
+
+.yd2-success {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #4c8153;
+  border-color: #cbdfc3;
+  background: #e5f2dc;
+}
+
+.yd2-empty {
+  display: grid;
+  justify-items: center;
+  gap: 16px;
+  min-width: 0;
+  padding: 65px 25px;
+  background: #e9f0e5;
+  border: 1px dashed #cbdcca;
+  text-align: center;
+}
+
+.yd2-empty > svg {
+  color: #81a65f;
+}
+
+.yd2-empty h2,
+.yd2-empty h3 {
+  margin: 0;
+  font: 800 clamp(2.9rem, 5vw, 4.6rem)/0.9
+    "Barlow Condensed", sans-serif;
+}
+
+.yd2-empty p {
+  max-width: 480px;
+  margin: 0;
+  color: #788a7b;
+  font-size: 0.8rem;
+  line-height: 1.85;
+}
+
+/* =============================================
+   SERVICE CALENDAR
+   ============================================= */
+
+.yd2-calendar-layout {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(310px, 0.66fr);
+  align-items: start;
+  gap: 25px;
+}
+
+.yd2-calendar-main {
+  display: grid;
+  gap: 23px;
+  min-width: 0;
+}
+
+.yd2-type-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.yd2-type-grid button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  min-height: 83px;
+  padding: 18px;
+  border: 1px solid #dbe5da;
+  background: #f7faf5;
+  color: #172128;
+  text-align: left;
+}
+
+.yd2-type-grid button.is-selected {
+  border-color: #96ba74;
+  background: #e7f4dc;
+}
+
+.yd2-type-grid button > svg:first-child {
+  flex-shrink: 0;
+  color: #81a75b;
+}
+
+.yd2-type-grid button strong {
+  flex: 1;
+  font: 700 1.65rem/1
+    "Barlow Condensed", sans-serif;
+}
+
+.yd2-type-grid button > svg:last-child:not(:first-child) {
+  flex-shrink: 0;
+  color: #6e925d;
+}
+
+/* CALENDAR HEADING */
+
+.yd2-calendar-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.yd2-calendar-heading h2 {
+  margin: 15px 0 0;
+  font: 800 clamp(2.8rem, 4vw, 4.4rem)/0.95
+    "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+}
+
+.yd2-month-arrows {
+  display: flex;
+  gap: 8px;
+}
+
+.yd2-month-arrows button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border: 1px solid #d6e2d3;
+  background: #edf4e7;
+  color: #182328;
+}
+
+.yd2-month-arrows button:disabled {
+  opacity: 0.3;
+}
+
+.yd2-weekdays,
+.yd2-calendar-days {
+  display: grid;
+  grid-template-columns:
+    repeat(7, minmax(0, 1fr));
+}
+
+.yd2-weekdays span {
+  padding: 13px 2px;
+  text-align: center;
+  color: #8e9f91;
+  font-size: 0.64rem;
+  font-weight: 800;
+}
+
+.yd2-calendar-days {
+  gap: 5px;
+}
+
+.yd2-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+  min-height: 78px;
+  padding: 7px 3px;
+  background: #f2f6ef;
+  border: 1px solid transparent;
+  color: #546f58;
+}
+
+.yd2-day strong {
+  font-size: 0.87rem;
+}
+
+.yd2-day small {
+  color: #7e9b64;
+  font-size: 0.56rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.yd2-day:not(:disabled):hover {
+  border-color: #9bbc8e;
+  background: #e3efd9;
+}
+
+.yd2-day:disabled {
+  color: #c2cec2;
+  background: #f9faf8;
+}
+
+.yd2-day.is-outside {
+  opacity: 0.3;
+}
+
+.yd2-day.is-selected,
+.yd2-day.is-selected:not(:disabled):hover {
+  background: #172128;
+  border-color: #172128;
+  color: #fff;
+}
+
+.yd2-day.is-selected small {
+  color: #c5f46d;
+}
+
+.yd2-day-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #a0bf8a;
+}
+
+.yd2-day.is-selected .yd2-day-dot {
+  background: #c5f46d;
+}
+
+.yd2-calendar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px 20px;
+  margin-top: 23px;
+}
+
+.yd2-calendar-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #839586;
+  font-size: 0.68rem;
+}
+
+.yd2-calendar-legend i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.yd2-calendar-legend i.is-open {
+  background: #a0bf8a;
+}
+
+.yd2-calendar-legend i.is-chosen {
+  background: #172128;
+}
+
+.yd2-calendar-legend i.is-record {
+  background: #86a967;
+}
+
+/* SERVICE TIME SELECTOR */
+
+.yd2-time-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.yd2-time-grid button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+  min-height: 142px;
+  padding: 21px;
+  border: 1px solid #dde6db;
+  background: #f6f9f4;
+  color: #172128;
+  text-align: left;
+}
+
+.yd2-time-grid button.is-selected {
+  background: #172128;
+  color: #fff;
+  border-color: #172128;
+}
+
+.yd2-time-grid svg {
+  color: #8bb76d;
+}
+
+.yd2-time-grid strong {
+  font: 700 2rem/0.9
+    "Barlow Condensed", sans-serif;
+}
+
+.yd2-time-grid small {
+  color: #829586;
+  font-size: 0.68rem;
+  line-height: 1.6;
+}
+
+.yd2-time-grid button.is-selected small {
+  color: #b4ccae;
+}
+
+/* STICKY CALENDAR SUMMARY */
+
+.yd2-sticky {
+  position: sticky;
+  top: 112px;
+  min-width: 0;
+}
+
+.yd2-calendar-summary {
+  background: #192429;
+  border: 1px solid #26383c;
+  color: #fff;
+}
+
+.yd2-summary-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 35px;
+  background:
+    radial-gradient(
+      ellipse at 90% 0%,
+      #3a574b,
+      transparent 65%
+    ),
+    #192429;
+}
+
+.yd2-summary-top > svg {
+  color: #c5f46d;
+}
+
+.yd2-summary-top h2 {
+  margin: 0;
+  font: 800 clamp(3.8rem, 5vw, 5.8rem)/0.82
+    "Barlow Condensed", sans-serif;
+}
+
+.yd2-summary-top h2 em {
+  color: #c5f46d;
+  font-weight: 500;
+}
+
+.yd2-summary-body {
+  padding: 27px 33px 35px;
+  border-top: 1px solid #ffffff27;
+}
+
+.yd2-summary-body > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 18px 0;
+  border-bottom: 1px solid #ffffff1e;
+}
+
+.yd2-summary-body > div > svg {
+  flex-shrink: 0;
+  color: #c5f46d;
+}
+
+.yd2-summary-body > div > span {
+  display: grid;
+  gap: 8px;
+}
+
+.yd2-summary-body small {
+  color: #9db4aa;
+  font-size: 0.68rem;
+}
+
+.yd2-summary-body strong {
+  font-size: 0.81rem;
+  line-height: 1.7;
+}
+
+.yd2-summary-body > .yd-button {
+  margin-top: 27px;
+}
+
+.yd2-summary-body > p {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 20px 0 0;
+  color: #9eb4aa;
+  font-size: 0.7rem;
+  line-height: 1.85;
+}
+
+.yd2-summary-body > p > svg {
+  flex-shrink: 0;
+  color: #c5f46d;
+}
+
+/* =============================================
+   MAINTENANCE TRACKER
+   ============================================= */
+
+.yd2-vehicle-overview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-bottom: 23px;
+}
+
+.yd2-vehicle-profile,
+.yd2-odometer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  min-width: 0;
+  padding: clamp(24px, 4vw, 43px);
+  background: #fff;
+  border: 1px solid #dce6db;
+}
+
+.yd2-vehicle-profile > svg {
+  color: #7ca65e;
+}
+
+.yd2-vehicle-profile > .yd2-field {
+  width: 100%;
+}
+
+.yd2-vehicle-profile h3 {
+  margin: 10px 0 0;
+  font: 800 4rem/0.88
+    "Barlow Condensed", sans-serif;
+  overflow-wrap: anywhere;
+}
+
+.yd2-vehicle-profile > p {
+  margin: 0;
+  color: #839184;
+  font-size: 0.81rem;
+}
+
+.yd2-odometer {
+  background: #e7f0e3;
+  border-color: #d3e1d0;
+}
+
+.yd2-odometer h3 {
+  margin: 0;
+  font: 800 3.3rem/0.9
+    "Barlow Condensed", sans-serif;
+}
+
+.yd2-odometer h3 em {
+  color: #79a270;
+  font-weight: 500;
+}
+
+.yd2-odometer > .yd2-field {
+  width: 100%;
+}
+
+.yd2-tracker-stats,
+.yd2-history-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 13px;
+  margin-bottom: 80px;
+}
+
+.yd2-tracker-stats article,
+.yd2-history-metrics article {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  min-width: 0;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #dce6dd;
+}
+
+.yd2-tracker-stats svg,
+.yd2-history-metrics svg {
+  color: #88ab68;
+}
+
+.yd2-tracker-stats strong,
+.yd2-history-metrics strong {
+  font: 800 clamp(2.6rem, 3.8vw, 4.6rem)/0.88
+    "Barlow Condensed", sans-serif;
+  overflow-wrap: anywhere;
+}
+
+.yd2-tracker-stats span,
+.yd2-history-metrics span {
+  color: #819184;
+  font-size: 0.73rem;
+  line-height: 1.7;
+}
+
+.yd2-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 26px;
+}
+
+.yd2-filters button {
+  min-height: 43px;
+  padding: 11px 16px;
+  border: 1px solid #d7e3d7;
+  background: #fff;
+  color: #758577;
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+.yd2-filters button.is-active {
+  background: #172128;
+  color: #fff;
+  border-color: #172128;
+}
+
+.yd2-maintenance-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.yd2-maintenance-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: clamp(23px, 3vw, 35px);
+  background: #fff;
+  border: 1px solid #dce6dc;
+}
+
+.yd2-maintenance-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.yd2-condition {
+  padding: 9px 11px;
+  font-size: 0.66rem;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.yd2-condition.state-untracked {
+  background: #edf0ed;
+  color: #788779;
+}
+
+.yd2-condition.state-on-track {
+  background: #e4f2dc;
+  color: #548453;
+}
+
+.yd2-condition.state-soon {
+  background: #f7f0d9;
+  color: #a2823f;
+}
+
+.yd2-condition.state-due {
+  background: #fae9dd;
+  color: #a66649;
+}
+
+.yd2-maintenance-card h3 {
+  margin: 25px 0 13px;
+  font: 800 3.45rem/0.9
+    "Barlow Condensed", sans-serif;
+}
+
+.yd2-maintenance-card > p {
+  color: #829185;
+  font-size: 0.8rem;
+  line-height: 1.85;
+}
+
+.yd2-interval-note {
+  margin-top: 9px;
+  padding: 14px;
+  background: #eef4e8;
+  color: #66846a;
+  font-size: 0.66rem;
+  font-weight: 800;
+  line-height: 1.7;
+}
+
+.yd2-progress-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 28px 0 11px;
+  color: #849487;
+  font-size: 0.72rem;
+}
+
+.yd2-progress-header strong {
+  color: #172128;
+}
+
+.yd2-progress-track {
+  height: 9px;
+  overflow: hidden;
+  background: #edf1e8;
+  border-radius: 20px;
+}
+
+.yd2-progress-track > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #6c976c,
+    #a5d16e
+  );
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+.yd2-condition-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 19px;
+  margin: 24px 0;
+}
+
+.yd2-condition-details > div {
+  display: grid;
+  gap: 9px;
+  min-width: 0;
+}
+
+.yd2-condition-details span {
+  color: #849287;
+  font-size: 0.69rem;
+}
+
+.yd2-condition-details strong {
+  font-size: 0.77rem;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.yd2-no-history {
+  margin: 22px 0 !important;
+}
+
+.yd2-card-action {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-top: auto;
+  padding: 19px 0 0;
+  border: 0;
+  border-top: 1px solid #e2e9df;
+  background: transparent;
+  color: #172128;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-align: left;
+}
+
+.yd2-card-action:hover {
+  color: #679258;
+}
+
+.yd2-record-panel {
+  margin-top: 85px;
+  scroll-margin-top: 125px;
+}
+
+.yd2-record-form {
+  display: grid;
+  gap: 22px;
+  max-width: 840px;
+}
+
+.yd2-record-form > .yd-button {
+  justify-self: start;
+}
+
+.yd2-recent-records {
+  padding-top: 90px;
+}
+
+.yd2-journal {
+  display: grid;
+  gap: 13px;
+}
+
+.yd2-journal-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 21px;
+  background: #fff;
+  border: 1px solid #dfe7de;
+}
+
+.yd2-journal-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  background: #e5f2dc;
+  color: #6b965b;
+}
+
+.yd2-journal-row > div:nth-child(2) {
+  flex: 1;
+  min-width: 0;
+}
+
+.yd2-journal-row strong {
+  font-size: 0.85rem;
+}
+
+.yd2-journal-row p {
+  margin: 10px 0;
+  color: #839285;
+  font-size: 0.75rem;
+}
+
+.yd2-journal-row small {
+  color: #7f9081;
+  font-size: 0.72rem;
+  line-height: 1.8;
+}
+
+.yd2-journal-row > button {
+  display: grid;
+  place-items: center;
+  width: 41px;
+  height: 41px;
+  flex-shrink: 0;
+  border: 1px solid #e9d8d0;
+  background: #fff2eb;
+  color: #a26754;
+}
+
+/* =============================================
+   VEHICLE HISTORY
+   ============================================= */
+
+.yd2-history-selector {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.yd2-history-selector .yd2-field {
+  width: min(345px, 100%);
+}
+
+.yd2-history-profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 28px;
+  padding: clamp(28px, 4vw, 48px);
+  margin-bottom: 22px;
+  background:
+    radial-gradient(
+      ellipse at 85% 10%,
+      #304741,
+      transparent 60%
+    ),
+    #162126;
+  color: white;
+}
+
+.yd2-history-profile > div:first-child {
+  display: grid;
+  justify-items: start;
+  gap: 14px;
+}
+
+.yd2-history-profile > div:first-child > svg {
+  color: #c5f46d;
+}
+
+.yd2-history-profile h3 {
+  margin: 4px 0;
+  font: 800 clamp(3.4rem, 5vw, 5.4rem)/0.89
+    "Barlow Condensed", sans-serif;
+  overflow-wrap: anywhere;
+}
+
+.yd2-history-profile p {
+  margin: 0;
+  color: #c0ccc4;
+  font-size: 0.8rem;
+}
+
+.yd2-history-profile > div:last-child {
+  display: grid;
+  gap: 9px;
+  text-align: right;
+}
+
+.yd2-history-profile > div:last-child > span,
+.yd2-history-profile > div:last-child > small {
+  color: #c5f46d;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+}
+
+.yd2-history-profile > div:last-child > strong {
+  font: 800 clamp(3.8rem, 6vw, 6rem)/0.9
+    "Barlow Condensed", sans-serif;
+}
+
+.yd2-history-panel {
+  padding: clamp(21px, 3.5vw, 43px);
+  background: #fff;
+  border: 1px solid #dfe7df;
+}
+
+.yd2-history-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.yd2-export {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  min-height: 47px;
+  padding: 12px 18px;
+  border: 1px solid #d1e0d0;
+  background: #e9f2e2;
+  color: #172128;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.yd2-export:hover {
+  background: #dcedcf;
+}
+
+/* HISTORY TIMELINE */
+
+.yd2-timeline {
+  display: grid;
+  margin-top: 35px;
+}
+
+.yd2-timeline-item {
+  display: grid;
+  grid-template-columns: 55px minmax(0, 1fr);
+  gap: 15px;
+  min-width: 0;
+  padding-bottom: 25px;
+}
+
+.yd2-timeline-marker {
+  position: relative;
+  display: grid;
+  place-items: start center;
+  padding-top: 5px;
+  color: #60925a;
+}
+
+.yd2-timeline-marker::before {
+  content: "";
+  position: absolute;
+  top: 38px;
+  bottom: -15px;
+  width: 1px;
+  background: #cfdccc;
+}
+
+.yd2-timeline-item:last-child
+  .yd2-timeline-marker::before {
+  display: none;
+}
+
+.yd2-timeline-marker > svg {
+  position: relative;
+  z-index: 1;
+  width: 41px;
+  height: 41px;
+  padding: 10px;
+  background: #e4f1dc;
+  border-radius: 50%;
+}
+
+.yd2-timeline-card {
+  min-width: 0;
+  padding: 27px;
+  background: #f7faf5;
+  border: 1px solid #e0e9df;
+}
+
+.yd2-timeline-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
+.yd2-timeline-top small {
+  color: #9bad98;
+  font-size: 0.65rem;
+  font-weight: 800;
+}
+
+.yd2-timeline-card h3 {
+  margin: 20px 0 12px;
+  font: 800 2.9rem/0.9
+    "Barlow Condensed", sans-serif;
+  overflow-wrap: anywhere;
+}
+
+.yd2-timeline-card > p {
+  color: #829285;
+  font-size: 0.78rem;
+}
+
+.yd2-timeline-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 25px;
+  padding: 20px 0;
+}
+
+.yd2-timeline-facts span {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #768b79;
+  font-size: 0.74rem;
+}
+
+.yd2-timeline-facts svg {
+  color: #81a965;
+}
+
+.yd2-timeline-note {
+  padding: 17px;
+  border-left: 2px solid #a5c891;
+  background: #edf3e8;
+  color: #738775;
+  font-size: 0.76rem;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+/* =============================================
+   SERVICE COMPARISON
+   ============================================= */
+
+.yd2-compare-types {
+  display: grid;
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.yd2-compare-types button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+  min-width: 0;
+  min-height: 175px;
+  padding: 19px;
+  background: #fff;
+  border: 1px solid #dce6dc;
+  color: #172128;
+  text-align: left;
+}
+
+.yd2-compare-types button.is-selected {
+  border-color: #9bc77b;
+  background: #e5f2d8;
+}
+
+.yd2-compare-types button > svg:first-child {
+  color: #79a663;
+}
+
+.yd2-compare-types button > span {
+  display: grid;
+  gap: 9px;
+  flex: 1;
+}
+
+.yd2-compare-types strong {
+  font: 700 1.9rem/0.95
+    "Barlow Condensed", sans-serif;
+}
+
+.yd2-compare-types small {
+  color: #829285;
+  font-size: 0.68rem;
+  line-height: 1.5;
+}
+
+.yd2-compare-types button > svg:last-child:not(:first-child) {
+  color: #6c995c;
+}
+
+.yd2-compare-heading {
+  margin-top: 92px;
+}
+
+.yd2-compare-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-bottom: 26px;
+}
+
+.yd2-compare-selector button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 47px;
+  padding: 12px 15px;
+  border: 1px solid #dce6da;
+  background: #fff;
+  color: #667a6a;
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+.yd2-compare-selector button.is-selected {
+  background: #172128;
+  color: #fff;
+  border-color: #172128;
+}
+
+.yd2-compare-selector button.is-selected svg {
+  color: #c5f46d;
+}
+
+.yd2-compare-cards {
+  display: grid;
+  grid-template-columns:
+    repeat(
+      var(--yd2-compare-count),
+      minmax(0, 1fr)
+    );
+  gap: 17px;
+}
+
+.yd2-compare-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: #fff;
+  border: 1px solid #dfe7dd;
+}
+
+.yd2-compare-image {
+  position: relative;
+  height: 235px;
+  overflow: hidden;
+  background: #394447;
+}
+
+.yd2-compare-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.yd2-compare-image > span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 13px;
+  background: #c5f46d;
+  color: #172128;
+  font-size: 0.65rem;
+  font-weight: 800;
+}
+
+.yd2-compare-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 28px;
+}
+
+.yd2-compare-card-body h3 {
+  margin: 18px 0;
+  font: 800 clamp(2.8rem, 3.8vw, 4rem)/0.88
+    "Barlow Condensed", sans-serif;
+}
+
+.yd2-compare-card-body > p {
+  flex: 1;
+  color: #7d8e80;
+  font-size: 0.78rem;
+  line-height: 1.85;
+}
+
+.yd2-compare-price {
+  display: grid;
+  gap: 12px;
+  padding: 22px 0;
+  margin-top: 25px;
+  border-top: 1px solid #e0e8df;
+  border-bottom: 1px solid #e0e8df;
+}
+
+.yd2-compare-price span {
+  color: #7a917b;
+  font-size: 0.64rem;
+  font-weight: 800;
+  line-height: 1.6;
+}
+
+.yd2-compare-price strong {
+  font: 800 3.3rem/0.9
+    "Barlow Condensed", sans-serif;
+}
+
+.yd2-compare-facts {
+  display: grid;
+  gap: 14px;
+  padding: 22px 0;
+}
+
+.yd2-compare-facts > div {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.74rem;
+}
+
+.yd2-compare-facts span {
+  color: #829184;
+}
+
+/* COMPARISON TABLE */
+
+.yd2-compare-table-panel {
+  margin-top: 60px;
+  padding: clamp(22px, 4vw, 47px);
+  background: #fff;
+  border: 1px solid #dde7dc;
+}
+
+.yd2-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #dee6dc;
+}
+
+.yd2-compare-table {
+  width: 100%;
+  min-width: 710px;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.yd2-compare-table th,
+.yd2-compare-table td {
+  padding: 18px;
+  border-bottom: 1px solid #e4eae2;
+  line-height: 1.7;
+}
+
+.yd2-compare-table thead th {
+  background: #172128;
+  color: #c5f46d;
+  font-size: 0.76rem;
+  text-align: center;
+}
+
+.yd2-compare-table thead th:first-child {
+  width: 38%;
+  text-align: left;
+}
+
+.yd2-compare-table tbody th {
+  color: #5f7764;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.yd2-compare-table tbody td {
+  text-align: center;
+  color: #637968;
+  font-size: 0.74rem;
+}
+
+.yd2-yes {
+  color: #75a35f;
+}
+
+.yd2-no {
+  color: #a7b4a8;
+}
+
+.yd2-table-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin: 24px 0 0;
+  color: #859486;
+  font-size: 0.72rem;
+  line-height: 1.85;
+}
+
+.yd2-table-note svg {
+  flex-shrink: 0;
+}
+
+.yd2-comparison-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 35px;
+  margin-top: 45px;
+  padding: clamp(28px, 5vw, 58px);
+  background: #172128;
+  color: #fff;
+}
+
+.yd2-comparison-total h2 {
+  margin: 22px 0 12px;
+  font: 800 clamp(4rem, 6vw, 6.8rem)/0.85
+    "Barlow Condensed", sans-serif;
+}
+
+.yd2-comparison-total h2 em {
+  color: #c5f46d;
+  font-weight: 500;
+}
+
+.yd2-comparison-total p {
+  color: #adbfaf;
+  font-size: 0.77rem;
+}
+
+.yd2-comparison-total > div:last-child {
+  display: grid;
+  justify-items: start;
+  gap: 18px;
+}
+
+.yd2-comparison-total > div:last-child > span {
+  color: #c5f46d;
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.yd2-comparison-total > div:last-child > strong {
+  font: 800 clamp(4rem, 6vw, 6.8rem)/0.9
+    "Barlow Condensed", sans-serif;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 1250px) {
+  .yd2-calendar-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .yd2-sticky {
+    position: static;
+  }
+
+  .yd2-calendar-summary {
+    max-width: 800px;
+  }
+
+  .yd2-compare-types {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .yd2-tracker-stats,
+  .yd2-history-metrics {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 950px) {
+  .yd2-vehicle-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .yd2-compare-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .yd2-compare-card {
+    max-width: 790px;
+  }
+
+  .yd2-compare-types {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .yd2-page-hero {
+    padding-block: 76px;
+  }
+
+  .yd2-page-hero h1 {
+    font-size: clamp(4.6rem, 13vw, 6rem);
+  }
+
+  .yd2-section {
+    padding-block: 75px;
+  }
+
+  .yd2-section-heading h2,
+  .yd2-history-selector h2,
+  .yd2-history-toolbar h2 {
+    font-size: clamp(3.6rem, 10vw, 4.9rem);
+  }
+
+  .yd2-panel,
+  .yd2-calendar-panel {
+    padding: 24px 15px;
+  }
+
+  .yd2-type-grid,
+  .yd2-time-grid,
+  .yd2-maintenance-grid,
+  .yd2-fields-two,
+  .yd2-compare-types {
+    grid-template-columns: 1fr;
+  }
+
+  .yd2-calendar-heading h2 {
+    font-size: 2.5rem;
+  }
+
+  .yd2-month-arrows button {
+    width: 39px;
+    height: 39px;
+  }
+
+  .yd2-calendar-days {
+    gap: 3px;
+  }
+
+  .yd2-weekdays span {
+    font-size: 0.54rem;
+  }
+
+  .yd2-day {
+    min-height: 56px;
+    gap: 5px;
+    padding: 4px 1px;
+  }
+
+  .yd2-day strong {
+    font-size: 0.74rem;
+  }
+
+  .yd2-day small {
+    font-size: 0.46rem;
+  }
+
+  .yd2-summary-top,
+  .yd2-summary-body {
+    padding: 27px 21px;
+  }
+
+  .yd2-summary-top h2 {
+    font-size: 4rem;
+  }
+
+  .yd2-vehicle-profile,
+  .yd2-odometer {
+    padding: 27px 19px;
+  }
+
+  .yd2-vehicle-profile h3 {
+    font-size: 3.4rem;
+  }
+
+  .yd2-tracker-stats,
+  .yd2-history-metrics {
+    gap: 9px;
+  }
+
+  .yd2-tracker-stats article,
+  .yd2-history-metrics article {
+    padding: 17px;
+  }
+
+  .yd2-tracker-stats strong,
+  .yd2-history-metrics strong {
+    font-size: 2.7rem;
+  }
+
+  .yd2-maintenance-card {
+    padding: 24px 19px;
+  }
+
+  .yd2-maintenance-card h3 {
+    font-size: 3.2rem;
+  }
+
+  .yd2-record-panel {
+    margin-top: 70px;
+  }
+
+  .yd2-recent-records {
+    padding-top: 70px;
+  }
+
+  .yd2-history-profile {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .yd2-history-profile > div:last-child {
+    text-align: left;
+  }
+
+  .yd2-history-panel {
+    padding: 22px 14px;
+  }
+
+  .yd2-history-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .yd2-timeline-item {
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 9px;
+  }
+
+  .yd2-timeline-marker > svg {
+    width: 35px;
+    height: 35px;
+  }
+
+  .yd2-timeline-card {
+    padding: 19px 15px;
+  }
+
+  .yd2-timeline-card h3 {
+    font-size: 2.5rem;
+  }
+
+  .yd2-compare-card-body {
+    padding: 23px;
+  }
+
+  .yd2-compare-table-panel {
+    padding: 25px 15px;
+  }
+
+  .yd2-comparison-total {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .yd2-comparison-total h2 {
+    font-size: 4.4rem;
+  }
+
+  .yd2-comparison-total > div:last-child > strong {
+    font-size: 4.7rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .yd2-page-hero h1 {
+    font-size: 4.15rem;
+  }
+
+  .yd2-calendar-heading h2 {
+    font-size: 2.15rem;
+  }
+
+  .yd2-day {
+    min-height: 48px;
+  }
+
+  .yd2-day strong {
+    font-size: 0.67rem;
+  }
+
+  .yd2-day small {
+    font-size: 0.43rem;
+  }
+
+  .yd2-tracker-stats strong,
+  .yd2-history-metrics strong {
+    font-size: 2.3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .yd2-page *,
+  .yd2-page *::before,
+  .yd2-page *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
