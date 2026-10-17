@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 
 import App from "./App.jsx";
+import "./styles/precision-v2.css";
 
 import FinalExperience from "./components/FinalExperience.jsx";
 

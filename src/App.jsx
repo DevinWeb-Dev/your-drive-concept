@@ -78,6 +78,9 @@ import {
   parseDemoBackup,
 } from "./data/workshopIntelligence.js";
 
+import ServiceIntelligence from "./pages/precision/ServiceIntelligence.jsx";
+import PartsCommandCenter from "./pages/precision/PartsCommandCenter.jsx";
+import OwnerJourneyStudio from "./pages/precision/OwnerJourneyStudio.jsx";
 import ServiceCalendarPage from "./pages/ServiceCalendarPage.jsx";
 import MaintenanceTrackerPage from "./pages/MaintenanceTrackerPage.jsx";
 import VehicleHistoryPage from "./pages/VehicleHistoryPage.jsx";
@@ -99,6 +102,9 @@ import {
   DataCenterPage,
 } from "./pages/ops/IntelligencePages.jsx";
 
+import PrecisionHome from "./pages/precision/PrecisionHome.jsx";
+import DiagnosticLab from "./pages/precision/DiagnosticLab.jsx";
+import WorkshopAtlas from "./pages/precision/WorkshopAtlas.jsx";
 import "./styles/site.css";
 
 // ==================================================
@@ -162,6 +168,8 @@ function makeId(prefix) {
 
 const PAGE_TITLES = {
   "/": "Home",
+  "/diagnostics": "Diagnostic Lab",
+  "/facility": "Workshop Atlas",
   "/services": "Automotive Services",
   "/compare": "Service Comparison",
   "/schedule": "Service Calendar",
@@ -205,14 +213,16 @@ function ScrollReset() {
 // ==================================================
 
 const NAV_ITEMS = [
-  ["Home", "/"],
-  ["Services", "/services"],
-  ["Compare", "/compare"],
-  ["Calendar", "/schedule"],
-  ["Maintenance", "/maintenance"],
-  ["My Garage", "/garage"],
+    ["Home", "/"],
+    ["Services", "/services"],
+    ["Diagnostic Lab", "/diagnostics"],
+    ["Workshop Atlas", "/facility"],
+    ["Compare", "/compare"],
+    ["Calendar", "/schedule"],
+    ["My Garage", "/garage"],
+    ["Service Intelligence", "/service-intelligence"],
   ["About", "/about"],
-];
+  ];
 
 function BrandLogo() {
   return (
@@ -506,306 +516,7 @@ function ServiceCard({ service }) {
 // PUBLIC HOME PAGE
 // ==================================================
 
-function HomePage() {
-  return (
-    <>
-      <section className="yd-hero">
-        <div className="yd-container yd-hero-grid">
-          <div className="yd-hero-copy">
-            <div className="yd-live-label">
-              <span />
-              THE NEXT GENERATION OF AUTO CARE
-            </div>
-
-            <h1>
-              EVERY
-              <br />
-              DRIVE
-              <br />
-              <em>DESERVES</em>
-              <br />
-              BETTER.
-            </h1>
-
-            <p>
-              Precision-minded service,
-              thoughtfully designed experiences,
-              and smarter ways to plan the care
-              your vehicle deserves.
-            </p>
-
-            <div className="yd-hero-actions">
-              <Link
-                to="/services"
-                className="yd-button is-lime"
-              >
-                Explore Services
-                <ArrowUpRight size={19} />
-              </Link>
-
-              <Link
-                to="/estimate"
-                className="yd-hero-secondary"
-              >
-                Estimate a Service
-                <ArrowRight size={19} />
-              </Link>
-            </div>
-
-            <div className="yd-hero-footnote">
-              <ShieldCheck size={19} />
-
-              <span>
-                AN AUTOMOTIVE PORTFOLIO CONCEPT
-                <br />
-                BUILT AROUND THE DRIVER
-              </span>
-            </div>
-          </div>
-
-          <div className="yd-hero-visual">
-            <div className="yd-hero-outline" />
-
-            <div className="yd-hero-photo">
-              <img
-                src={IMAGES.hero}
-                alt="Premium sports car"
-                fetchPriority="high"
-              />
-            </div>
-
-            <div className="yd-hero-floating">
-              <Gauge size={25} />
-
-              <span>
-                <small>DRIVER-FIRST</small>
-
-                <strong>
-                  PRECISION
-                  <br />
-                  EXPERIENCE
-                </strong>
-              </span>
-            </div>
-
-            <div className="yd-hero-side-text">
-              PERFORMANCE / CARE / DETAIL
-            </div>
-          </div>
-        </div>
-
-        <div className="yd-hero-bottom-line">
-          <div className="yd-container">
-            <span>01 / SERVICE EXPERIENCE</span>
-            <span>ENGINEERED FOR THE ROAD AHEAD</span>
-            <span>SCROLL TO EXPLORE ↓</span>
-          </div>
-        </div>
-      </section>
-
-      <section className="yd-proof-strip">
-        <div className="yd-container">
-          <div>
-            <Wrench size={23} />
-            <strong>CARE</strong>
-            <span>Thoughtful service concepts</span>
-          </div>
-
-          <div>
-            <Gauge size={23} />
-            <strong>CLARITY</strong>
-            <span>Illustrative pricing breakdowns</span>
-          </div>
-
-          <div>
-            <CarFront size={23} />
-            <strong>CONTROL</strong>
-            <span>Vehicle planning experience</span>
-          </div>
-        </div>
-      </section>
-
-      <section className="yd-section yd-container">
-        <SectionHeading
-          eyebrow="01 / OUR AUTOMOTIVE SERVICES"
-          title="Built around"
-          accent="every detail."
-          description="From essential maintenance to advanced care concepts, discover a service experience designed for clarity and confidence."
-        />
-
-        <div className="yd-service-grid">
-          {SERVICES.slice(0, 3).map((service) => (
-            <ServiceCard
-              service={service}
-              key={service.id}
-            />
-          ))}
-        </div>
-
-        <div className="yd-center-action">
-          <Link
-            to="/services"
-            className="yd-button is-outline"
-          >
-            Explore All Services
-            <ArrowUpRight size={18} />
-          </Link>
-        </div>
-      </section>
-
-      <section className="yd-editorial">
-        <div className="yd-editorial-visual">
-          <img
-            src={IMAGES.details}
-            alt="Vehicle care inspiration"
-            loading="lazy"
-          />
-
-          <div className="yd-editorial-stamp">
-            <Sparkles size={22} />
-            ENGINEERED FOR YOUR DRIVE
-          </div>
-        </div>
-
-        <div className="yd-editorial-copy">
-          <span className="yd-eyebrow is-lime">
-            02 / THE YOUR DRIVE PHILOSOPHY
-          </span>
-
-          <h2>
-            NOT JUST
-            <br />
-            A SERVICE.
-            <br />
-            <em>A STANDARD.</em>
-          </h2>
-
-          <p>
-            Great automotive care begins before
-            the first tool is picked up.
-            It begins with understanding the
-            vehicle, the driver, and the
-            decisions that matter.
-          </p>
-
-          <div className="yd-editorial-points">
-            <span>
-              <Check size={18} />
-              Clear service information
-            </span>
-
-            <span>
-              <Check size={18} />
-              Transparent sample estimates
-            </span>
-
-            <span>
-              <Check size={18} />
-              Simple vehicle planning
-            </span>
-          </div>
-
-          <Link
-            to="/about"
-            className="yd-text-link is-light"
-          >
-            Discover Our Approach
-            <ArrowRight size={19} />
-          </Link>
-        </div>
-      </section>
-
-      <section className="yd-section yd-container">
-        <SectionHeading
-          eyebrow="03 / THE DRIVER EXPERIENCE"
-          title="Three steps."
-          accent="One clear direction."
-        />
-
-        <div className="yd-workflow-grid">
-          {WORKFLOW.map((item) => (
-            <article
-              className="yd-workflow-card"
-              key={item.number}
-            >
-              <span>{item.number}</span>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="yd-estimate-banner">
-        <div className="yd-container yd-estimate-banner-inner">
-          <div>
-            <span className="yd-eyebrow is-lime">
-              04 / THE SERVICE ESTIMATOR
-            </span>
-
-            <h2>
-              KNOW THE
-              <br />
-              <em>NUMBERS.</em>
-            </h2>
-
-            <p>
-              Select your vehicle, choose services,
-              and see an illustrative cost breakdown
-              update in real time.
-            </p>
-
-            <Link
-              to="/estimate"
-              className="yd-button is-lime"
-            >
-              Open Live Estimator
-              <ArrowUpRight size={18} />
-            </Link>
-          </div>
-
-          <div className="yd-estimate-banner-visual">
-            <img
-              src={IMAGES.sport}
-              alt="Performance car"
-              loading="lazy"
-            />
-
-            <div>
-              <Gauge size={26} />
-              PRECISION / EVERY MILE
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="yd-section yd-container">
-        <SectionHeading
-          eyebrow="05 / COMMON QUESTIONS"
-          title="Good care starts"
-          accent="with clarity."
-        />
-
-        <div className="yd-faq">
-          {FAQS.map((item, index) => (
-            <details key={item.question}>
-              <summary>
-                <span>
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-
-                <strong>{item.question}</strong>
-                <Plus size={19} />
-              </summary>
-
-              <p>{item.answer}</p>
-            </details>
-          ))}
-        </div>
-      </section>
-    </>
-  );
-}
+function HomePage() { return <PrecisionHome />; }
 
 // ==================================================
 // PUBLIC SERVICE CATALOG
@@ -3376,6 +3087,8 @@ export default function App() {
             path="services"
             element={<ServicesPage />}
           />
+          <Route path="diagnostics" element={<DiagnosticLab />} />
+          <Route path="facility" element={<WorkshopAtlas />} />
 
           <Route
             path="services/:serviceId"
@@ -3413,6 +3126,16 @@ export default function App() {
                 key={location.search}
                 vehicles={vehicles}
                 onCreateRequest={createRequest}
+              />
+            }
+          />
+
+          <Route
+            path="service-intelligence"
+            element={
+              <ServiceIntelligence
+                vehicles={vehicles}
+                requests={requests}
               />
             }
           />
@@ -3502,7 +3225,10 @@ export default function App() {
               element={<ServiceBayPage />}
             />
 
-            {/* BATCH 4 */}
+              <Route path="parts" element={<PartsCommandCenter />} />
+              <Route path="owners" element={<OwnerJourneyStudio />} />
+
+          {/* BATCH 4 */}
 
             <Route
               path="reports"
